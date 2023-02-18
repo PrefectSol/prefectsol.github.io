@@ -20,5 +20,5 @@ game.gameSetUp()
 window.onload = () => {
     window.setInterval(() => {
         game.runGame();
-    }, 300)
+    }, 100)
 }
