@@ -4,8 +4,8 @@ document.addEventListener('mousemove', function(e) {
     var x = e.clientX;
     var y = e.clientY;
 
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
+    cursor.style.left = -13 + x + 'px';
+    cursor.style.top = -13 + y + 'px';
 });
 
 const canvas = document.querySelector("#gamefield")
@@ -21,4 +21,10 @@ window.onload = () => {
     window.setInterval(() => {
         game.runGame();
     }, 100)
+
+    const image = document.getElementById("logo");
+
+    image.addEventListener("click", function() {
+        game.gameSetUp();
+    });
 }

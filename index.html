@@ -7,19 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="icon" href="resources/neko.jpg">
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="Assets/Images/neko.jpg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="follow-cursor"></div>
-    <div class="canvas-container">
-        <canvas id="gamefield"></canvas>
-        <a href="info.html"><img src="resources/glitch_logo.gif" alt="LOGO" class="centered-image"></a>
+
+    <div class="header">
+        <div class="logo">Prefect (Maxim) | Just a programmer</div>
+        <div class="buttons">
+          <button>About me</button>
+          <button>Projects</button>
+          <button>Contacts</button>
+        </div>
+      </div>
+
+    <div class="canvas-container item">
+        <canvas id="gamefield"></canvas> <br>
+        <img id="logo" src="Assets/Gif/glitch_logo.gif" alt="LOGO" class="centered-image">
     </div>
 </body>
 
-<script src="GameOfLife.js"></script>
-<script src="index.js"></script>
+<script src="js/gameOfLife.js"></script>
+<script src="js/app.js"></script>
 
 </html>

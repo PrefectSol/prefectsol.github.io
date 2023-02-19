@@ -1,5 +1,5 @@
 body {
-    cursor: url(resources/cursor.cur), auto;
+    cursor: url(../Assets/Cursors/cursor.cur), auto;
     text-align: center;
     background-color: #181818;
     overflow: hidden;
@@ -31,11 +31,11 @@ canvas {
 }
 
 .a:hover {
-    cursor: url(resources/pointer-cursor.cur), auto;
+    cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
 }
 
 .centered-image:hover {
-    cursor: url(resources/pointer-cursor.cur), auto;
+    cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
 }
 
 .centered-image {
@@ -44,7 +44,8 @@ canvas {
 }
 
 .follow-cursor {
-    z-index: 1;
+    pointer-events: none;
+    z-index: 999;
     transition: 0.1ms;
     opacity: 0.4;
     position: absolute;
@@ -61,3 +62,37 @@ canvas {
     -ms-transition: 0.1ms;
     -o-transition: 0.1ms;
 }
+
+.header {
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #232323;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+  
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+.buttons button {
+    background-color: #FF756B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #181818;
+} 
