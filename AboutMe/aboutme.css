@@ -5,11 +5,20 @@ body {
     cursor: url(../Assets/Cursors/cursor.cur), auto;
     text-align: center;
     background-color: #181818;
+    color:white;
     overflow: hidden;
 }
 
 .a:hover {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
+}
+
+p {
+    color: white;
+}
+
+#title {
+    font-size: 30px;
 }
 
 .follow-cursor {
@@ -76,3 +85,16 @@ a {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
     background-color: #181818;
 } 
+
+#main {
+    font-size: 22px;
+    color: white;
+    margin-left: 50px;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: left;
+}
+
+#comment {
+    font-size: 27px;
+}
