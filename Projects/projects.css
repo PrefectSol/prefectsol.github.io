@@ -1,3 +1,6 @@
+* {
+    cursor: url(../Assets/Cursors/cursor.cur), auto;
+}
 body {
     cursor: url(../Assets/Cursors/cursor.cur), auto;
     text-align: center;
@@ -5,42 +8,8 @@ body {
     overflow: hidden;
 }
 
-img {
-    width: auto;
-    height: auto;
-    max-width: 70%;
-    max-height: 70%;
-}
-
-.canvas-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-canvas {
-    transform: translateZ(0);
-}
-  
-#gamefield {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .a:hover {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
-}
-
-.centered-image:hover {
-    cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
-}
-
-.centered-image {
-    pointer-events:visibleStroke;
-    position:relative;
 }
 
 .follow-cursor {
