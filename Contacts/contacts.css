@@ -60,7 +60,7 @@ a {
   
 .buttons button {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
-    background-color: gray;
+    background-color: #7f7f7f;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -75,7 +75,7 @@ a {
 
 .buttons button:hover {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
-    background-color: #181818;
+    background-color: #a53333;
 } 
 
 #title {
