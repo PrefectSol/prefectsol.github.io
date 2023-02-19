@@ -6,7 +6,7 @@ class GameOfLife
     {
         this.cell_size = 5;
         this.dead_color = `#181818`;
-        this.alive_color = `#FF756B`;
+        this.alive_color = `gray`;
         this.cells_in_column = Math.floor(canvas.width / this.cell_size);
         this.cells_in_rows = Math.floor(canvas.height / this.cell_size);
         this.active_array = [];

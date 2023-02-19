@@ -94,7 +94,7 @@ a {
   
 .buttons button {
     cursor: url(../Assets/Cursors/pointer-cursor.cur), auto;
-    background-color: #FF756B;
+    background-color: gray;
     color: white;
     border: none;
     padding: 10px 20px;
