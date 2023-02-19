@@ -1,3 +1,7 @@
+* {
+    cursor: url(../Assets/Cursors/cursor.cur), auto;
+}
+
 body {
     cursor: url(../Assets/Cursors/cursor.cur), auto;
     text-align: center;
