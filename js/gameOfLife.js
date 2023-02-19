@@ -19,7 +19,7 @@ class GameOfLife
                 this.active_array[i] = [];
                 for (let j = 0; j < this.cells_in_column; j++) 
                 {
-                    this.active_array[i][j] = (Math.random() < 0.25) ? 1 : 0;
+                    this.active_array[i][j] = (Math.random() < 0.2) ? 1 : 0;
                 }
             }
 
