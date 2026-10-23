@@ -1,44 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#232323">
+    <meta name="description" content="Prefect (Maxim) | Just a programmer">
+
     <title>Prefect | Just a programmer</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="icon" href="Assets/Images/neko.jpg">
+    <link rel="icon" href="assets/images/icon_neko.jpg">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/site.js" defer></script>
+    <script src="js/life.js" defer></script>
+    <script src="js/home.js" defer></script>
 </head>
 
-<body>
-    <div class="follow-cursor"></div>
-    <div class="header">
-        <div class="logo"><a href="index.html" id="meText">Prefect (Maxim) | Just a programmer</a></div>
-        <div class="buttons">
-            <a href="Projects/projects.html"><button>Projects</button></a>
-            <a href="AboutMe/aboutme.html"><button >About me</button></a>
-            <a href="Contacts/contacts.html"><button>Contacts</button></a>
-        </div>
-    </div>
+<body class="home" data-page="home">
+    <header class="header"></header>
 
-    <div class="canvas-container item">
-        <canvas id="gamefield"></canvas> <br>
-        <img id="logo" src="Assets/Gif/glitch_logo.gif" alt="LOGO" class="centered-image">
-    </div>
+    <canvas id="life" class="life" aria-hidden="true"></canvas>
+
+    <main class="stage">
+        <img id="logo" class="logo" src="assets/gif/logo_glitch.gif" alt="Prefect" draggable="false">
+    </main>
 </body>
-
-<script src="js/gameOfLife.js"></script>
-<script src="js/app.js"></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MB4CX5MY8M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MB4CX5MY8M');
-</script>
-
 </html>
