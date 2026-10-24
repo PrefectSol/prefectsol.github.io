@@ -45,6 +45,11 @@ class GameOfLife
         this.dirty = true;
         this.resize_timer = 0;
 
+        this.generations = 0;
+        this.gps = 0;
+        this.gps_window = 0;
+        this.gps_time = 0;
+
         canvas.style.transition = `opacity ${this.fade_ms}ms ease-out`;
         canvas.classList.add("is-hidden");
 
@@ -123,6 +128,11 @@ class GameOfLife
         hash = Math.imul(hash ^ (hash >>> 13), 0xc2b2ae35);
 
         return ((hash ^ (hash >>> 16)) >>> 0) / 4294967296;
+    }
+
+    get maxGps()
+    {
+        return 1000 / this.step_ms;
     }
 
     resize()
@@ -219,6 +229,9 @@ class GameOfLife
 
         this.seeding = false;
         this.accumulator = 0;
+        this.gps = 0;
+        this.gps_window = 0;
+        this.gps_time = 0;
         this.repaint();
         this.canvas.classList.remove("is-hidden");
     }
@@ -270,6 +283,8 @@ class GameOfLife
         this.cells = next;
         this.next = cells;
         this.dirty = true;
+        this.generations++;
+        this.gps_window++;
     }
 
     paint(cx, cy)
@@ -372,6 +387,32 @@ class GameOfLife
         this.pointer = -1;
     }
 
+    sampleGps(time)
+    {
+        if (this.gps_time === 0)
+        {
+            this.gps_time = time;
+            return;
+        }
+
+        const elapsed = time - this.gps_time;
+
+        if (elapsed > 2000)
+        {
+            this.gps_window = 0;
+            this.gps_time = time;
+            return;
+        }
+
+        if (elapsed >= 250)
+        {
+            const sample = Math.min(this.gps_window * 1000 / elapsed, this.maxGps);
+            this.gps = this.gps === 0 ? sample : this.gps * 0.6 + sample * 0.4;
+            this.gps_window = 0;
+            this.gps_time = time;
+        }
+    }
+
     frame = (time) =>
     {
         if (this.last_time)
@@ -395,6 +436,11 @@ class GameOfLife
         {
             this.ctx.putImageData(this.image, -this.margin, -this.margin);
             this.dirty = false;
+        }
+
+        if (!this.seeding)
+        {
+            this.sampleGps(time);
         }
 
         requestAnimationFrame(this.frame);

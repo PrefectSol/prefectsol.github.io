@@ -339,6 +339,64 @@ a,
     opacity: 0;
 }
 
+.meter {
+    position: fixed;
+    right: var(--gutter);
+    bottom: 16px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border-left: 3px solid var(--accent);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--text);
+    background-color: var(--surface);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    transition: gap 0.2s ease-out;
+}
+
+.meter-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    padding: 0;
+    border: 0;
+    border-radius: 3px;
+    font: inherit;
+    line-height: 1;
+    color: var(--text);
+    background-color: var(--button);
+    cursor: var(--cursor-pointer);
+    transition: background-color 0.15s ease-out;
+}
+
+.meter-toggle:hover {
+    background-color: var(--button-hover);
+}
+
+.meter-value {
+    display: inline-block;
+    width: 170px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.meter.is-collapsed {
+    gap: 0;
+}
+
+.meter.is-collapsed .meter-value {
+    width: 0;
+    opacity: 0;
+}
+
 @media (min-width: 1200px) {
     .decor-item {
         display: block;
@@ -384,5 +442,19 @@ a,
 @media (max-width: 480px) {
     .brand-tail {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .meter {
+        right: 12px;
+        bottom: 12px;
+        padding: 6px 10px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .meter-value {
+        width: 135px;
     }
 }
