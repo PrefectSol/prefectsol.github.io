@@ -379,21 +379,42 @@ a,
     background-color: var(--button-hover);
 }
 
+.meter-details {
+    display: grid;
+    gap: 2px;
+    width: 17ch;
+    max-width: 17ch;
+    height: 3em;
+    overflow: hidden;
+    transition: width 0.2s ease-out, max-width 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.meter-row {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 1ch;
+    line-height: 1.4;
+}
+
+.meter-label {
+    color: var(--muted);
+}
+
 .meter-value {
-    display: inline-block;
-    width: 170px;
+    min-width: 0;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
     overflow: hidden;
-    transition: width 0.2s ease-out, opacity 0.2s ease-out;
+    text-align: left;
 }
 
 .meter.is-collapsed {
     gap: 0;
 }
 
-.meter.is-collapsed .meter-value {
+.meter.is-collapsed .meter-details {
     width: 0;
+    max-width: 0;
     opacity: 0;
 }
 
@@ -454,7 +475,8 @@ a,
         gap: 8px;
     }
 
-    .meter-value {
-        width: 135px;
+    .meter-details {
+        width: 17ch;
+        max-width: 17ch;
     }
 }
