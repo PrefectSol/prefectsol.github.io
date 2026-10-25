@@ -94,16 +94,36 @@ function loadViewCount()
         return;
     }
 
-    fetch("https://prefect.goatcounter.com/counter/TOTAL.json")
-        .then((response) => response.ok ? response.json() : Promise.reject())
-        .then((data) =>
+    const endpoint = "https://prefect.goatcounter.com/counter/TOTAL.json";
+
+    const update = async () =>
+    {
+        try
         {
-            const digits = String(data.count).replace(/\D/g, "");
-            element.textContent = digits
-                ? digits.replace(/\B(?=(\d{3})+(?!\d))/g, "'")
-                : "—";
-        })
-        .catch(() => {});
+            const response = await fetch(`${endpoint}?t=${Date.now()}`, { cache: "no-store" });
+            if (!response.ok)
+            {
+                return;
+            }
+
+            const data = await response.json();
+            const raw = data.count ?? data.count_unique;
+            const digits = String(raw ?? "").replace(/\D/g, "");
+            if (!digits)
+            {
+                return;
+            }
+
+            element.textContent = digits.replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+        }
+        catch
+        {
+            // Keep the last successful value and retry later.
+        }
+    };
+
+    update();
+    setInterval(update, 5 * 60 * 1000);
 }
 
 loadViewCount();
