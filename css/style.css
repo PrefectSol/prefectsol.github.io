@@ -309,6 +309,13 @@ a,
     pointer-events: none;
 }
 
+.logo-shadow {
+    position: fixed;
+    z-index: 1;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
 .logo {
     max-width: min(70%, 720px);
     max-height: 60vh;
@@ -317,6 +324,16 @@ a,
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    filter: grayscale(1);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: filter 0.4s ease;
+}
+
+.logo:hover {
+    filter: none;
 }
 
 .follower {

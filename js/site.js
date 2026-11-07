@@ -1,8 +1,8 @@
 const LAST_EDIT = "2026-10-23";
 
 const NAVIGATION = [
-    { page: "portfolio", href: "portfolio.html", label: "portfolio" },
     { page: "about", href: "about.html", label: "about me" },
+    { page: "portfolio", href: "portfolio.html", label: "portfolio" },
     { page: "contacts", href: "contacts.html", label: "contacts" }
 ];
 
